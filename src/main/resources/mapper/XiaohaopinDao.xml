@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.XiaohaopinDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.XiaohaopinEntity" id="xiaohaopinMap">
+        <result property="xiaohaopinbianhao" column="xiaohaopinbianhao"/>
+        <result property="xiaohaopinmingcheng" column="xiaohaopinmingcheng"/>
+        <result property="tupian" column="tupian"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="weizhi" column="weizhi"/>
+        <result property="xiangqing" column="xiangqing"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.XiaohaopinVO" >
+		SELECT * FROM xiaohaopin  xiaohaopin         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.XiaohaopinVO" >
+		SELECT  xiaohaopin.* FROM xiaohaopin  xiaohaopin 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.XiaohaopinView" >
+
+		SELECT  xiaohaopin.* FROM xiaohaopin  xiaohaopin 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.XiaohaopinView" >
+		SELECT * FROM xiaohaopin  xiaohaopin <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
